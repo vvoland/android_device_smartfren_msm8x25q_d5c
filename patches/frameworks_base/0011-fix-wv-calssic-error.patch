@@ -1,0 +1,31 @@
+From 4bdfb20ca92b9f82e4d1a3559b758ebe71939ff5 Mon Sep 17 00:00:00 2001
+From: Anonim47 <yosefadis@hotmail.com>
+Date: Mon, 27 Jul 2015 14:38:41 +0700
+Subject: [PATCH] Fix compile error because Webview Classic
+
+Change-Id: Id614a074e967e2d478b25a2f297b8a931bd398ac
+Signed-off-by: Anonim47 <yosefadis@hotmail.com>
+---
+ core/java/android/webkit/WebViewClassic.java | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/core/java/android/webkit/WebViewClassic.java b/core/java/android/webkit/WebViewClassic.java
+index 8d40568..eb9a8bc 100644
+--- a/core/java/android/webkit/WebViewClassic.java
++++ b/core/java/android/webkit/WebViewClassic.java
+@@ -1367,10 +1367,11 @@ public final class WebViewClassic implements WebViewProvider, WebViewProvider.Sc
+             WebViewFactory.getProvider().getStatics().freeMemoryForTests();
+         }
+ 
+-        @Override
++/*        @Override
+         public void freeMemoryForTests() {
+             WebViewFactory.getProvider().getStatics().freeMemoryForTests();
+         }
++*/
+ 
+         @Override
+         public void setWebContentsDebuggingEnabled(boolean enable) {
+-- 
+1.9.1
+

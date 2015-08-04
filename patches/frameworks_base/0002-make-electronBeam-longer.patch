@@ -1,0 +1,43 @@
+From 8e2717447a2d667f5566a78d57a51a20f36fb0e0 Mon Sep 17 00:00:00 2001
+From: xiaognol <317065820@qq.com>
+Date: Tue, 13 May 2014 02:19:03 +0800
+Subject: [PATCH] make electronBeam longer
+
+Change-Id: I5540080534cb7ff0965a43fa83ee17f0893cbdef
+Signed-off-by: xiaognol <317065820@qq.com>
+---
+ services/java/com/android/server/power/DisplayPowerController.java | 4 ++--
+ services/java/com/android/server/power/ElectronBeam.java           | 2 +-
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/services/java/com/android/server/power/DisplayPowerController.java b/services/java/com/android/server/power/DisplayPowerController.java
+index cdbd723..f31a05a 100644
+--- a/services/java/com/android/server/power/DisplayPowerController.java
++++ b/services/java/com/android/server/power/DisplayPowerController.java
+@@ -110,8 +110,8 @@ final class DisplayPowerController {
+     // well after dusk.
+     private static final long TWILIGHT_ADJUSTMENT_TIME = DateUtils.HOUR_IN_MILLIS * 2;
+ 
+-    private static final int ELECTRON_BEAM_ON_ANIMATION_DURATION_MILLIS = 250;
+-    private static final int ELECTRON_BEAM_OFF_ANIMATION_DURATION_MILLIS = 400;
++    private static final int ELECTRON_BEAM_ON_ANIMATION_DURATION_MILLIS = 300;// 250;
++    private static final int ELECTRON_BEAM_OFF_ANIMATION_DURATION_MILLIS = 600;// 400;
+ 
+     private static final int MSG_UPDATE_POWER_STATE = 1;
+     private static final int MSG_PROXIMITY_SENSOR_DEBOUNCED = 2;
+diff --git a/services/java/com/android/server/power/ElectronBeam.java b/services/java/com/android/server/power/ElectronBeam.java
+index 21b6ed1..73e1d72 100644
+--- a/services/java/com/android/server/power/ElectronBeam.java
++++ b/services/java/com/android/server/power/ElectronBeam.java
+@@ -66,7 +66,7 @@ final class ElectronBeam {
+     // The relative proportion of the animation to spend performing
+     // the horizontal stretch effect.  The remainder is spent performing
+     // the vertical stretch effect.
+-    private static final float HSTRETCH_DURATION = 0.5f;
++    private static final float HSTRETCH_DURATION = 0.3f;//0.5f;
+     private static final float VSTRETCH_DURATION = 1.0f - HSTRETCH_DURATION;
+ 
+     // The number of frames to draw when preparing the animation so that it will
+-- 
+1.8.3.2
+

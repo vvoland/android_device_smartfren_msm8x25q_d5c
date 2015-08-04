@@ -1,0 +1,28 @@
+From 56c2dda010e9f9e2dc83790461a6cfed6f7def15 Mon Sep 17 00:00:00 2001
+From: Anonim47 <yosefadis@hotmail.com>
+Date: Mon, 27 Jul 2015 14:45:16 +0700
+Subject: [PATCH] Fix wifi error because wrong path We don't know huawei use
+ wifi direcotry under system, lol.
+
+Change-Id: Id9e6abab688a626b2733d75daf54203947419607
+Signed-off-by: Anonim47 <yosefadis@hotmail.com>
+---
+ init/devices.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/init/devices.c b/init/devices.c
+index 273553d..4d72260 100644
+--- a/init/devices.c
++++ b/init/devices.c
+@@ -50,7 +50,7 @@
+ #define SYSFS_PREFIX    "/sys"
+ #define FIRMWARE_DIR1   "/etc/firmware"
+ #define FIRMWARE_DIR2   "/vendor/firmware"
+-#define FIRMWARE_DIR3   "/system/wifi"
++#define FIRMWARE_DIR3   "/persist/wifi"
+ #define FIRMWARE_DIR4   "/data/misc/wifi"
+ 
+ extern struct selabel_handle *sehandle;
+-- 
+1.9.1
+

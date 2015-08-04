@@ -1,0 +1,31 @@
+From 1435eff415a9f98abc987454c78a1d307b6566a4 Mon Sep 17 00:00:00 2001
+From: Anonim47 <yosefadis@hotmail.com>
+Date: Sun, 26 Jul 2015 20:38:50 +0700
+Subject: [PATCH] DONT Include proprietary Terminal Emulator
+
+Change-Id: Ibfa6b09735955b1dff47db31a3ef0d1bf0ef6626
+Signed-off-by: Anonim47 <yosefadis@hotmail.com>
+---
+ config/common.mk | 6 ------
+ 1 file changed, 6 deletions(-)
+
+diff --git a/config/common.mk b/config/common.mk
+index d6f67db..2061edf 100644
+--- a/config/common.mk
++++ b/config/common.mk
+@@ -216,12 +216,6 @@ PRODUCT_PACKAGES += \
+     Superuser \
+     su
+ 
+-# Terminal Emulator
+-PRODUCT_COPY_FILES +=  \
+-    vendor/cm/proprietary/Term.apk:system/app/Term.apk \
+-    vendor/cm/proprietary/lib/armeabi/libjackpal-androidterm5.so:system/lib/libjackpal-androidterm5.so \
+-    vendor/cm/proprietary/lib/armeabi/libjackpal-termexec2.so:system/lib/libjackpal-termexec2.so
+-
+ PRODUCT_PROPERTY_OVERRIDES += \
+     persist.sys.root_access=1
+ else
+-- 
+1.9.1
+

@@ -1,0 +1,58 @@
+From da98fbf1c280279ef3a8eb510f6ceeb53fedeb99 Mon Sep 17 00:00:00 2001
+From: xiaognol <317065820@qq.com>
+Date: Mon, 29 Sep 2014 22:41:01 +0800
+Subject: [PATCH] support dsds
+
+Change-Id: I8041c286177b30675087d920986c4cbdfc7882c3
+Signed-off-by: xiaognol <317065820@qq.com>
+---
+ .../android/internal/telephony/RILConstants.java   | 26 +++++++++++++---------
+ 1 file changed, 16 insertions(+), 10 deletions(-)
+
+diff --git a/telephony/java/com/android/internal/telephony/RILConstants.java b/telephony/java/com/android/internal/telephony/RILConstants.java
+index 1c056a6..6dd6402 100644
+--- a/telephony/java/com/android/internal/telephony/RILConstants.java
++++ b/telephony/java/com/android/internal/telephony/RILConstants.java
+@@ -287,14 +287,19 @@ cat include/telephony/ril.h | \
+     int RIL_REQUEST_ACKNOWLEDGE_INCOMING_GSM_SMS_WITH_PDU = 106;
+     int RIL_REQUEST_STK_SEND_ENVELOPE_WITH_STATUS = 107;
+     int RIL_REQUEST_VOICE_RADIO_TECH = 108;
+-    int RIL_REQUEST_GET_CELL_INFO_LIST = 109;
+-    int RIL_REQUEST_SET_UNSOL_CELL_INFO_LIST_RATE = 110;
+-    int RIL_REQUEST_SET_INITIAL_ATTACH_APN = 111;
+-    int RIL_REQUEST_IMS_REGISTRATION_STATE = 112;
+-    int RIL_REQUEST_IMS_SEND_SMS = 113;
+-    int RIL_REQUEST_GET_DATA_CALL_PROFILE = 114;
+-    int RIL_REQUEST_SET_UICC_SUBSCRIPTION = 115;
+-    int RIL_REQUEST_SET_DATA_SUBSCRIPTION = 116;
++    int RIL_REQUEST_GET_CELL_INFO_LIST = 20001;
++    int RIL_REQUEST_SET_UNSOL_CELL_INFO_LIST_RATE = 20002;
++    int RIL_REQUEST_SET_INITIAL_ATTACH_APN = 20003;
++    int RIL_REQUEST_IMS_REGISTRATION_STATE = 109;
++    int RIL_REQUEST_IMS_SEND_SMS = 110;
++    int RIL_REQUEST_GET_DATA_CALL_PROFILE = 111;
++    int RIL_REQUEST_SET_UICC_SUBSCRIPTION = 118;
++    int RIL_REQUEST_SET_DATA_SUBSCRIPTION = 119;
++    int RIL_REQUEST_GET_DATA_SUBSCRIPTION = 121;
++    int RIL_REQUEST_GET_UICC_SUBSCRIPTION = 120;
++    int RIL_REQUEST_SET_SUBSCRIPTION_MODE = 122;
++    int RIL_TETHERED_MODE_OFF = 0;
++    int RIL_TETHERED_MODE_ON = 1;
+     int RIL_REQUEST_SIM_TRANSMIT_BASIC = 117;
+     int RIL_REQUEST_SIM_OPEN_CHANNEL = 118;
+     int RIL_REQUEST_SIM_CLOSE_CHANNEL = 119;
+@@ -338,8 +343,9 @@ cat include/telephony/ril.h | \
+     int RIL_UNSOL_EXIT_EMERGENCY_CALLBACK_MODE = 1033;
+     int RIL_UNSOL_RIL_CONNECTED = 1034;
+     int RIL_UNSOL_VOICE_RADIO_TECH_CHANGED = 1035;
+-    int RIL_UNSOL_CELL_INFO_LIST = 1036;
+-    int RIL_UNSOL_RESPONSE_IMS_NETWORK_STATE_CHANGED = 1037;
++    int RIL_UNSOL_CELL_INFO_LIST = 20000;
++    int RIL_UNSOL_RESPONSE_IMS_NETWORK_STATE_CHANGED = 1036;
++    int RIL_UNSOL_TETHERED_MODE_STATE_CHANGED = 1037;
+     int RIL_UNSOL_ON_SS = 1038;
+     int RIL_UNSOL_STK_CC_ALPHA_NOTIFY = 1039;
+     int RIL_UNSOL_UICC_SUBSCRIPTION_STATUS_CHANGED = 1040;
+-- 
+1.8.3.2
+

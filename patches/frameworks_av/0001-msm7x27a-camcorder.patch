@@ -1,0 +1,43 @@
+From 180a54f3dce1f002f2c00657d40fb1ac96a9dbe4 Mon Sep 17 00:00:00 2001
+From: Anonim47 <yosefadis@hotmail.com>
+Date: Sat, 1 Aug 2015 21:36:53 +0700
+Subject: [PATCH] msm7x27a: only submit one input buffer
+
+This makes camcorder work without disabling metadata.
+
+Change-Id: I81f8259a6bdbf17f7cbfb1aa27643f41875a5b0e
+---
+ media/libmediaplayerservice/StagefrightRecorder.cpp | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+
+diff --git a/media/libmediaplayerservice/StagefrightRecorder.cpp b/media/libmediaplayerservice/StagefrightRecorder.cpp
+index 8c4f34e..3cfeec8 100644
+--- a/media/libmediaplayerservice/StagefrightRecorder.cpp
++++ b/media/libmediaplayerservice/StagefrightRecorder.cpp
+@@ -1684,12 +1684,23 @@ status_t StagefrightRecorder::setupVideoEncoder(
+     CHECK_EQ(client.connect(), (status_t)OK);
+ 
+     uint32_t encoder_flags = 0;
++#ifdef QCOM_LEGACY_OMX
++    char value[PROPERTY_VALUE_MAX];
++#endif
+     if (mIsMetaDataStoredInVideoBuffers) {
+         encoder_flags |= OMXCodec::kStoreMetaDataInVideoBuffers;
+ #ifdef USE_SUBMIT_ONE_INPUT_BUFFER
+         ALOGW("msm7627 family of chipsets supports, only one buffer at a time");
+         encoder_flags |= OMXCodec::kOnlySubmitOneInputBufferAtOneTime;
+ #endif
++#ifdef QCOM_LEGACY_OMX
++        if (property_get("ro.board.platform", value, "0")
++            && (!strncmp(value, "msm7627a", sizeof("msm7627a") - 1) ||
++                !strncmp(value, "msm7x27a", sizeof("msm7x27a") - 1))) {
++            ALOGW("msm7627 family of chipsets supports, only one buffer at a time");
++            encoder_flags |= OMXCodec::kOnlySubmitOneInputBufferAtOneTime;
++        }
++#endif
+     }
+ 
+     // Do not wait for all the input buffers to become available.
+-- 
+1.9.1
+

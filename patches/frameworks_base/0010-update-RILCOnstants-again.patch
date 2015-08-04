@@ -1,0 +1,33 @@
+From 6539dc465dd81d8bf905067b3ec92bf75020ea31 Mon Sep 17 00:00:00 2001
+From: xiaognol <317065820@qq.com>
+Date: Tue, 30 Sep 2014 00:01:13 +0800
+Subject: [PATCH] update RILCOnstants again
+
+Change-Id: Ib878bc490df8ddd869adbb520df5a68da7a6948a
+Signed-off-by: xiaognol <317065820@qq.com>
+---
+ telephony/java/com/android/internal/telephony/RILConstants.java | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/telephony/java/com/android/internal/telephony/RILConstants.java b/telephony/java/com/android/internal/telephony/RILConstants.java
+index 560e508..fd6ee4e 100644
+--- a/telephony/java/com/android/internal/telephony/RILConstants.java
++++ b/telephony/java/com/android/internal/telephony/RILConstants.java
+@@ -301,10 +301,10 @@ cat include/telephony/ril.h | \
+     int RIL_TETHERED_MODE_OFF = 0;
+     int RIL_TETHERED_MODE_ON = 1;
+     int RIL_REQUEST_SIM_TRANSMIT_BASIC = 117;
+-    int RIL_REQUEST_SIM_OPEN_CHANNEL = 118;
+-    int RIL_REQUEST_SIM_CLOSE_CHANNEL = 119;
+-    int RIL_REQUEST_SIM_TRANSMIT_CHANNEL = 120;
+-    int RIL_REQUEST_SIM_GET_ATR = 121;
++    int RIL_REQUEST_SIM_OPEN_CHANNEL = 124;
++    int RIL_REQUEST_SIM_CLOSE_CHANNEL = 125;
++    int RIL_REQUEST_SIM_TRANSMIT_CHANNEL = 126;
++    int RIL_REQUEST_SIM_GET_ATR = 127;
+ 
+     int RIL_UNSOL_RESPONSE_BASE = 1000;
+     int RIL_UNSOL_RESPONSE_RADIO_STATE_CHANGED = 1000;
+-- 
+1.8.3.2
+
