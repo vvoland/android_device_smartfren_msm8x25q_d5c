@@ -65,7 +65,8 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/recovery/sbin/rmt_storage_recovery:/recovery/root/sbin/rmt_storage_recovery \
 	$(LOCAL_PATH)/recovery/sbin/rmt_oeminfo_recovery:/recovery/root/sbin/rmt_oeminfo_recovery \
 	$(LOCAL_PATH)/recovery/sbin/linker:/recovery/root/sbin/linker \
-	$(LOCAL_PATH)/recovery/sbin/charge.sh:/recovery/root/sbin/charge.sh
+	$(LOCAL_PATH)/recovery/sbin/charge.sh:/recovery/root/sbin/charge.sh \
+	$(LOCAL_PATH)/recovery/sbin/charge_recovery:/recovery/root/sbin/charge_recovery
 
 # INIT.D Files
 PRODUCT_COPY_FILES += \
