@@ -62,15 +62,16 @@ TARGET_BOARD_PLATFORM_GPU := qcom-adreno203
 BOARD_USES_ADRENO_200 := true
 
 # Inline kernel building
-#TARGET_NO_KERNEL := true
-PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/zImage:kernel
+TARGET_NO_KERNEL := false
+TARGET_KERNEL_CONFIG := cm_msm8x25q_defconfig
+#PRODUCT_COPY_FILES += \
+#	$(LOCAL_PATH)/zImage:kernel
 
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_USES_UNCOMPRESSED_KERNEL := false
 
-BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom loglevel=1 vmalloc=400M androidboot.selinux=permissive 
+BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom loglevel=1 vmalloc=400M androidboot.selinux=permissive
 
 ARCH_ARM_HAVE_TLS_REGISTER := true
 BOARD_EGL_CFG := device/dns/s4503/config/egl.cfg
@@ -186,6 +187,8 @@ DISABLE_DEXPREOPT := true
 BOARD_RIL_CLASS := ../../../device/smartfren/msm8x25q_d5c/ril/
 
 DEVICE_RESOLUTION := 480x854
+TARGET_SCREEN_WIDTH := 480
+TARGET_SCREEN_HEIGHT := 854
 
 # Wi-Fi
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
@@ -205,6 +208,8 @@ WIFI_EXT_MODULE_NAME := "cfg80211"
 WIFI_DRIVER_FW_PATH_PARAM := "/data/misc/wifi/fwpath"
 
 # Recovery
+BOARD_CUSTOM_GRAPHICS := ../../../device/smartfren/msm8x25q_d5c/recovery/graphics.c
+RECOVERY_VARIANT := philz
 BOARD_HAS_NO_SELECT_BUTTON := true
 TARGET_PREBUILT_RECOVERY_KERNEL := device/smartfren/msm8x25q_d5c/kernel
 TARGET_RECOVERY_INITRC := device/smartfren/msm8x25q_d5c/recovery/init.rc
@@ -218,7 +223,7 @@ TW_INTERNAL_STORAGE_MOUNT_POINT := "sdcard1"
 TW_EXTERNAL_STORAGE_PATH := "/sdcard"
 TW_EXTERNAL_STORAGE_MOUNT_POINT := "sdcard"
 TW_DEFAULT_EXTERNAL_STORAGE := true
-TW_FLASH_FROM_STORAGE := true 
+TW_FLASH_FROM_STORAGE := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun%d/file
 BOARD_USE_CUSTOM_RECOVERY_FONT:= \"roboto_10x18.h\"
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
