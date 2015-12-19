@@ -42,7 +42,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
     frameworks/native/data/etc/android.hardware.sensor.gyroscope.xml:system/etc/permissions/android.hardware.sensor.gyroscope.xml \
     frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
-    frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml  
+    frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml
 
 # Config
 PRODUCT_COPY_FILES += \
@@ -75,7 +75,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/config/init.d/91zipalign:system/etc/init.d/91zipalign \
     $(LOCAL_PATH)/config/init.d/sqlite_optimize:system/etc/init.d/sqlite_optimize \
     $(LOCAL_PATH)/config/init.d/03battery_life:system/etc/init.d/03battery_life \
-    $(LOCAL_PATH)/config/init.d/sysinit:system/bin/sysinit 
+    $(LOCAL_PATH)/config/init.d/sysinit:system/bin/sysinit
 
 # Ramdisk
 PRODUCT_PACKAGES += \
@@ -99,7 +99,7 @@ PRODUCT_PACKAGES += \
 
 # Misc
 PRODUCT_PACKAGES += \
-    com.android.future.usb.accessory 
+    com.android.future.usb.accessory
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -158,7 +158,7 @@ PRODUCT_PACKAGES += \
 # Misc
 PRODUCT_PACKAGES += \
     libcnefeatureconfig \
-    libnl_2 
+    libnl_2
 
 PRODUCT_PACKAGES += \
     libQWiFiSoftApCfg
@@ -231,7 +231,7 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/rootdir/ueventd.qcom.rc:root/ueventd.qcom.rc \
 	$(LOCAL_PATH)/rootdir/rmt_storage_recovery:root/rmt_storage_recovery\
 	$(LOCAL_PATH)/rootdir/nv_set:root/nv_set \
-	$(LOCAL_PATH)/rootdir/init.usb.rc:root/init.usb.rc 
+	$(LOCAL_PATH)/rootdir/init.usb.rc:root/init.usb.rc
 
 
 # Properties
@@ -258,7 +258,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.sys.fw.bg_apps_limit=20
     debug.gr.numframebuffers=3 \
     ro.bq.gpu_to_cpu_unsupported=1
-  
+
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapgrowthlimit=128m \
     dalvik.vm.heapsize=256m \
@@ -283,7 +283,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ril.subscription.types=NV,RUIM \
-    rild.libargs=-d/dev/smd0 \
     ro.telephony.call_ring.delay=3000 \
     ro.telephony.call_ring.multiple=false \
     com.qc.hardware=true
@@ -306,9 +305,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
    ro.fm.mulinst.recording.support=false
 
 PRODUCT_PROPERTY_OVERRIDES += \
-  ro.use_data_netmgrd=true \
-  persist.data_netmgrd_nint=16 \
-  persist.radio.apm_sim_not_pwdn=1  
+   ro.use_data_netmgrd=true
 
 $(call inherit-product, vendor/smartfren/msm8x25q_d5c/msm8x25q_d5c-vendor.mk)
 #$(shell mkdir -p $(OUT)/obj/KERNEL_OBJ/usr)
