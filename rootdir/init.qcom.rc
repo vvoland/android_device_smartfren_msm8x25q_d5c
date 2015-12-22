@@ -35,14 +35,16 @@ on init
     mkdir /storage 0775 system sdcard_r
     mkdir /mnt/media_rw/sdcard0 0700 media_rw media_rw
     mkdir /mnt/media_rw/sdcard1 0700 media_rw media_rw
-    mkdir /storage/sdcard1 0000 system system
-    mkdir /storage/sdcard0 0000 system system
+    mkdir /storage/sdcard1 0700 system system
+    mkdir /storage/sdcard0 0700 system system
 
     export SECONDARY_STORAGE /storage/sdcard0
     export EXTERNAL_STORAGE /storage/sdcard1
 
     symlink /storage/sdcard1 /mnt/sdcard
     symlink /storage/sdcard1 /sdcard
+    symlink /storage/sdcard1 /mnt/ext_card
+    symlink /storage/sdcard1 /ext_card
     symlink /storage/sdcard0 /mnt/internal_sd
     symlink /storage/sdcard0 /internal_sd
 
@@ -139,6 +141,16 @@ on boot
     chown system system /sys/kernel/logger/log_events/priority
     chown system system /sys/kernel/logger/log_radio/priority
 
+    chown system system /sys/class/leds/flashlight/brightness
+    chown system system /sys/class/leds/torch/brightness
+    chown system system /sys/class/leds/lcd-backlight/brightness
+    chown system system /sys/class/leds/button-backlight/brightness
+
+    chmod 666 /sys/class/leds/flashlight/brightness
+    chmod 666 /sys/class/leds/torch/brightness
+    chmod 666 /sys/class/leds/lcd-backlight/brightness
+    chmod 666 /sys/class/leds/button-backlight/brightness
+
     chown system system /sys/devices/platform/mmi_key_dev/keytest
 
     chmod 664 /dev/input/event1
@@ -190,6 +202,7 @@ on fs
     # mount mmc partitions
     mount_all /fstab.qcom
     swapon_all /fstab.qcom
+    setprop ro.crypto.fuse_sdcard true
 
 # msm specific files that need to be created on /data
 on post-fs-data
@@ -321,9 +334,10 @@ service fuse_sdcard0 /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/sdcard0
 
 service fuse_sdcard1 /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/sdcard1 /storage/sdcard1
     class late_start
-    user root
-    group root
     disabled
+#    user root
+#    group root
+
 
 service qcamerasvr /system/bin/mm-qcamera-daemon
     class late_start

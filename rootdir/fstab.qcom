@@ -8,8 +8,6 @@
 /dev/block/mmcblk0p18			/cache		ext4		nosuid,nodev,barrier=1			wait,check
 /dev/block/mmcblk0p17			/system		ext4		ro,barrier=1				wait
 /dev/block/mmcblk0p21			/data		ext4		nosuid,nodev,barrier=1,noauto_da_alloc,nomblk_io_submit,errors=panic     wait,encryptable=footer
+/devices/platform/msm_sdcc.1/mmc_host 	auto		auto		defaults                                voldmanaged=sdcard1:auto,noemulatedsd
+/devices/platform/msm_sdcc.3/mmc_host	auto		auto		defaults                                voldmanaged=sdcard0:20,noemulatedsd,nonremovable
 
-#/dev/block/mmcblk1p1			auto		auto		defaults				voldmanaged=sdcard1:auto,noemulatedsd
-#/dev/block/mmcblk0p20			auto		auto		defaults				voldmanaged=sdcard0:auto,noemulatedsd,nonremovable
-/dev/block/mmcblk0p20                  /storage/sdcard0          vfat    defaults                                defaults
-/dev/block/mmcblk1p1                   /storage/sdcard1           vfat    defaults                                defaults
