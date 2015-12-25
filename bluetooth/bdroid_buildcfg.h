@@ -18,7 +18,7 @@
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
 
-#define BTM_DEF_LOCAL_NAME   "DNS S4503"
+#define BTM_DEF_LOCAL_NAME   "Kruger&Matz Drive"
 #define BTA_DISABLE_DELAY 1000 /* in milliseconds */
 
 #endif

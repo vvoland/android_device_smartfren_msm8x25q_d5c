@@ -25,10 +25,6 @@
 
 LOCAL_PATH := device/smartfren/msm8x25q_d5c
 
--include vendor/huawei/msm7x27a-common/BoardConfigVendor.mk
-
--include device/dns/s4503/kernel/Android.mk
-
 TARGET_SPECIFIC_HEADER_PATH := device/smartfren/msm8x25q_d5c/include
 
 # cflags
@@ -74,7 +70,6 @@ TARGET_USES_UNCOMPRESSED_KERNEL := false
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom loglevel=1 vmalloc=400M androidboot.selinux=permissive
 
 ARCH_ARM_HAVE_TLS_REGISTER := true
-BOARD_EGL_CFG := device/dns/s4503/config/egl.cfg
 
 BOARD_BOOTIMAGE_PARTITION_SIZE := 13901824 # 0xD42000
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 13901824 # 0xD42000
@@ -83,7 +78,6 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 1849688064 #0x6E400000
 BOARD_CACHEIMAGE_PARTITION_SIZE := 41943040
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 TARGET_NO_RECOVERY := false
-TARGET_USERIMAGES_USE_EXT4 := true
 
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01300000 --base 0x00200000 --pagesize 4096
 

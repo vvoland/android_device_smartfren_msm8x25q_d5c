@@ -36,5 +36,5 @@
     <array name="cpu.active">
         <value>200</value>
     </array>
-    <item name="battery.capacity">1800</item>
+    <item name="battery.capacity">4000</item>
 </device>

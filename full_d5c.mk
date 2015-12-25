@@ -31,6 +31,6 @@ $(call inherit-product, device/smartfren/msm8x25q_d5c/device_d5c.mk)
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := msm8x25q_d5c
 PRODUCT_NAME := full_d5c
-PRODUCT_BRAND := smartfren
-PRODUCT_MODEL := Smartfren Andromax i2
-PRODUCT_MANUFACTURER := JSR
+PRODUCT_BRAND := krugermatz
+PRODUCT_MODEL := Kruger&Matz Drive
+PRODUCT_MANUFACTURER := Woland

@@ -307,8 +307,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
    ro.use_data_netmgrd=true
 
-$(call inherit-product, vendor/smartfren/msm8x25q_d5c/msm8x25q_d5c-vendor.mk)
-#$(shell mkdir -p $(OUT)/obj/KERNEL_OBJ/usr)
+$(call inherit-product-if-exists, vendor/smartfren/msm8x25q_d5c/msm8x25q_d5c-vendor.mk)
 
-PRODUCT_MANUFACTURER := SMARTFREN
-PRODUCT_BRAND := JSR
+PRODUCT_MANUFACTURER := Woland
+PRODUCT_BRAND := Kruger&Matz
