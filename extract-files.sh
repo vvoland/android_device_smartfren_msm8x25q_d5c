@@ -1,7 +1,7 @@
 #!/bin/bash
 
-export VENDOR=nokia
-export DEVICE=normandy
+export VENDOR=smartfren
+export DEVICE=msm8x25q_d5c
 
 if [ $# -eq 1 ]; then
     COPY_FROM=$1
@@ -46,5 +46,5 @@ for FILE in `egrep -v '(^#|^$)' ../$DEVICE/proprietary-files.txt`; do
     fi
 done
 
-echo "This is designed to extract files from an official cm-11.0 build"
+echo "This is designed to extract files from an official stock build"
 ./setup-makefiles.sh
