@@ -12,5 +12,5 @@
 
 /dev/block/mmcblk0p20                  /sdcard1          vfat    defaults                                defaults
 
-/dev/block/mmcblk1p1                   /sdcard           vfat    defaults                                defaults
+/dev/block/mmcblk1p1                   /external_sd      vfat    defaults                                defaults
 #^^^ external micro sd card

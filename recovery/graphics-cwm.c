@@ -202,7 +202,12 @@ void gr_font_size(int *x, int *y)
     *y = gr_font->cheight;
 }
 
+
+int gr_text(int x, int y, const char *s, ...)
+#if 0
 int gr_text(int x, int y, const char *s, int bold)
+#endif
+
 {
     GGLContext *gl = gr_context;
     GRFont *font = gr_font;

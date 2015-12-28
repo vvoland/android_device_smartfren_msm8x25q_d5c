@@ -33,7 +33,7 @@ lib/egl/libGLESv2_adreno200.so
 lib/egl/libq3dtools_adreno200.so
 
 # hw
-lib/hw/camera.msm7627a.so
+#lib/hw/camera.msm7627a.so
 lib/hw/sensors.msm8x25q_d5.so
 
 # bluez-plugin
@@ -227,14 +227,14 @@ lib/libchromatix_s5k3l1yx_video_hd.so
 lib/libchromatix_s5k3l1yx_zsl.so
 lib/libchromatix_s5k4e1_default_video.so
 lib/libchromatix_s5k4e1_preview.so
-lib/libmmcamera_faceproc.so
-lib/libmmcamera_frameproc.so
-lib/libmmcamera_hdr_lib.so
-lib/libmmcamera_image_stab.so
-lib/libmmcamera_interface2.so
-lib/libmmcamera_statsproc31.so
-lib/libmmcamera_wavelet_lib.so
-lib/liboemcamera.so
+#lib/libmmcamera_faceproc.so
+#lib/libmmcamera_frameproc.so
+#lib/libmmcamera_hdr_lib.so
+#lib/libmmcamera_image_stab.so
+#lib/libmmcamera_interface2.so
+#lib/libmmcamera_statsproc31.so
+#lib/libmmcamera_wavelet_lib.so
+#lib/liboemcamera.so
 lib/libtscamera-ext.so
 
 # Wifi driver

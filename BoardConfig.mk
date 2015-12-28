@@ -107,7 +107,7 @@ BOARD_HAVE_BLUETOOTH := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/smartfren/msm8x25q_d5c/bluetooth
 
 # Dalvik
-TARGET_ARCH_LOWMEM := true
+TARGET_ARCH_LOWMEM := false
 
 # Hardware tunables framework
 BOARD_HARDWARE_CLASS := device/smartfren/msm8x25q_d5c/cmhw/
@@ -202,8 +202,10 @@ WIFI_EXT_MODULE_NAME := "cfg80211"
 WIFI_DRIVER_FW_PATH_PARAM := "/data/misc/wifi/fwpath"
 
 # Recovery
-BOARD_CUSTOM_GRAPHICS := ../../../device/smartfren/msm8x25q_d5c/recovery/graphics.c
-RECOVERY_VARIANT := philz
+#RECOVERY_VARIANT := twrp
+BOARD_CUSTOM_GRAPHICS := ../../../device/smartfren/msm8x25q_d5c/recovery/graphics-cwm.c
+TW_BOARD_CUSTOM_GRAPHICS := ../../../device/smartfren/msm8x25q_d5c/recovery/graphics-twrp.c
+TW_TARGET_USES_QCOM_BSP := false
 BOARD_HAS_NO_SELECT_BUTTON := true
 TARGET_PREBUILT_RECOVERY_KERNEL := device/smartfren/msm8x25q_d5c/kernel
 TARGET_RECOVERY_INITRC := device/smartfren/msm8x25q_d5c/recovery/init.rc
@@ -212,14 +214,9 @@ BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_USES_MMCUTILS := true
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
-TW_INTERNAL_STORAGE_PATH := "/sdcard1"
-TW_INTERNAL_STORAGE_MOUNT_POINT := "sdcard1"
-TW_EXTERNAL_STORAGE_PATH := "/sdcard"
-TW_EXTERNAL_STORAGE_MOUNT_POINT := "sdcard"
 TW_DEFAULT_EXTERNAL_STORAGE := true
 TW_FLASH_FROM_STORAGE := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun%d/file
-BOARD_USE_CUSTOM_RECOVERY_FONT:= \"roboto_10x18.h\"
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 TW_MAX_BRIGHTNESS := 255

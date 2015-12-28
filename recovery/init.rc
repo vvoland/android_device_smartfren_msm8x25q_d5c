@@ -9,6 +9,7 @@ on init
     export EXTERNAL_STORAGE /sdcard
 
     symlink /system/etc /etc
+    symlink /external_sd /sdcard
 
     mkdir /boot
     mkdir /recovery
@@ -17,6 +18,7 @@ on init
     mkdir /system
     mkdir /data
     mkdir /internal_sd
+    mkdir /external_sd
     mkdir /sdcard
     mkdir /storage
     mkdir /storage/sdcard0
@@ -46,9 +48,6 @@ on boot
 service ueventd /sbin/ueventd
     critical
 
-service rmt_storage /sbin/rmt_storage_recovery
-    user root
-
 service rmt_oeminfo /sbin/rmt_oeminfo_recovery
     oneshot
 
@@ -77,3 +76,6 @@ on property:service.adb.root=1
     write /sys/class/android_usb/android0/enable 0
     restart adbd
     write /sys/class/android_usb/android0/enable 1
+
+on property:sys.powerctl=*
+    powerctl ${sys.powerctl}

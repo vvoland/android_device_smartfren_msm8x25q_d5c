@@ -62,8 +62,8 @@ PRODUCT_COPY_FILES += \
 
 # Files needed for recovery image
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/recovery/sbin/rmt_storage_recovery:/recovery/root/sbin/rmt_storage_recovery \
 	$(LOCAL_PATH)/recovery/sbin/rmt_oeminfo_recovery:/recovery/root/sbin/rmt_oeminfo_recovery \
+	$(LOCAL_PATH)/recovery/sbin/rmt_storage_recovery:/recovery/root/sbin/rmt_storage_recovery \
 	$(LOCAL_PATH)/recovery/sbin/linker:/recovery/root/sbin/linker \
 	$(LOCAL_PATH)/recovery/sbin/charge.sh:/recovery/root/sbin/charge.sh \
 	$(LOCAL_PATH)/recovery/sbin/charge_recovery:/recovery/root/sbin/charge_recovery
@@ -76,6 +76,20 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/config/init.d/sqlite_optimize:system/etc/init.d/sqlite_optimize \
     $(LOCAL_PATH)/config/init.d/03battery_life:system/etc/init.d/03battery_life \
     $(LOCAL_PATH)/config/init.d/sysinit:system/bin/sysinit
+
+# Camera
+# TODO find good sources for these and build them
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/lib/camera.msm7x27a.so:system/lib/hw/camera.msm7x27a.so \
+	$(LOCAL_PATH)/lib/libmmcamera_faceproc.so:system/lib/libmmcamera_faceproc.so \
+	$(LOCAL_PATH)/lib/libmmcamera_frameproc.so:system/lib/libmmcamera_frameproc.so \
+	$(LOCAL_PATH)/lib/libmmcamera_hdr_lib.so:system/lib/libmmcamera_hdr_lib.so \
+	$(LOCAL_PATH)/lib/libmmcamera_image_stab.so:system/lib/libmmcamera_image_stab.so \
+	$(LOCAL_PATH)/lib/libmmcamera_interface2.so:system/lib/libmmcamera_interface2.so \
+	$(LOCAL_PATH)/lib/libmmcamera_statsproc31.so:system/lib/libmmcamera_statsproc31.so \
+	$(LOCAL_PATH)/lib/libmmcamera_wavelet_lib.so:system/lib/libmmcamera_wavelet_lib.so \
+	$(LOCAL_PATH)/lib/liboemcamera.so:system/lib/liboemcamera.so
+
 
 # Ramdisk
 PRODUCT_PACKAGES += \
@@ -262,9 +276,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapgrowthlimit=128m \
     dalvik.vm.heapsize=256m \
-    ro.config.low_ram=true \
+    ro.config.low_ram=false \
     ro.ksm.default=1 \
-    ro.config.low_ram=true
 
 PRODUCT_PROPERTY_OVERRIDES += \
    media.stagefright.enable-player=true \
