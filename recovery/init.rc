@@ -48,6 +48,9 @@ on boot
 service ueventd /sbin/ueventd
     critical
 
+service rmt_storage /sbin/rmt_storage_recovery
+    user root
+
 service rmt_oeminfo /sbin/rmt_oeminfo_recovery
     oneshot
 

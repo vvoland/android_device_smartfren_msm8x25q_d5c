@@ -60,14 +60,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media/media_profiles.xml:system/etc/media_profiles.xml \
     $(LOCAL_PATH)/media/media_codecs.xml:system/etc/media_codecs.xml
 
-# Files needed for recovery image
-PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/recovery/sbin/rmt_oeminfo_recovery:/recovery/root/sbin/rmt_oeminfo_recovery \
-	$(LOCAL_PATH)/recovery/sbin/rmt_storage_recovery:/recovery/root/sbin/rmt_storage_recovery \
-	$(LOCAL_PATH)/recovery/sbin/linker:/recovery/root/sbin/linker \
-	$(LOCAL_PATH)/recovery/sbin/charge.sh:/recovery/root/sbin/charge.sh \
-	$(LOCAL_PATH)/recovery/sbin/charge_recovery:/recovery/root/sbin/charge_recovery
-
 # INIT.D Files
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/config/init.d/sqlite3:system/xbin/sqlite3 \
