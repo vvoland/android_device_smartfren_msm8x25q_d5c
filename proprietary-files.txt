@@ -23,6 +23,7 @@ bin/fm_qsoc_patches
 bin/fmconfig
 bin/usbhub
 bin/usbhub_init
+bin/radish
 
 #egl
 lib/egl/eglsubAndroid.so
@@ -113,8 +114,6 @@ lib/libvoem_if.so
 lib/libwidevine.so
 lib/libxml.so
 lib/qnet-plugin.so
-lib/libiprouteutil.so
-lib/libnetlink.so
 
 #Omx
 lib/libimage-jpeg-enc-omx-comp.so
@@ -257,3 +256,6 @@ lib/librfm_sar.so
 lib/libril.so
 bin/rild
 lib/libdsucsd.so
+
+# Power
+vendor/lib/hw/power.qcom.so
