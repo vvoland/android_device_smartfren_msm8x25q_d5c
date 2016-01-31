@@ -76,11 +76,9 @@ lib/libwmsts.so
 lib/liballjoyn.so
 lib/libaudcal.so
 lib/libaudioalsa.so
-lib/libaudioalsa.so
 lib/libaudioeq.so
 lib/libcommondefs.so
 lib/libdiag.so
-lib/libdivxdrmdecrypt.so
 lib/libdivxdrmdecrypt.so
 lib/libDivxDrm.so
 lib/libgemini.so
