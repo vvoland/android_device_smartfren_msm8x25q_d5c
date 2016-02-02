@@ -200,10 +200,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
    camera.msm7x27a
 
-# Webkit
-PRODUCT_PACKAGES += \
-    libwebcore
-
 # Power Hal
 PRODUCT_PACKAGES += \
     power.msm7x27a
@@ -297,17 +293,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vold.umsdirtyratio=50
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.webview.provider=classic
-
-PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0 \
     wifi.supplicant_scan_interval=60
-
-
-PRODUCT_PROPERTY_OVERRIDES += \
-   ro.fm.analogpath.supported=false \
-   ro.fm.transmitter=false \
-   ro.fm.mulinst.recording.support=false
 
 PRODUCT_PROPERTY_OVERRIDES += \
    ro.use_data_netmgrd=true

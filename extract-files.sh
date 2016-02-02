@@ -46,5 +46,18 @@ for FILE in `egrep -v '(^#|^$)' ../$DEVICE/proprietary-files.txt`; do
     fi
 done
 
+echo "Applying proprietary blobs patches..."
+printf "patching libgsl.so... "
+echo "BinaryPatch log" > binary_patch.log
+# Hack
+# [00003B20] BNE.W loc_3C58 ----->  B loc_3C58
+# Be quiet about ioctl warnings
+dd if=binary_patches/libgsl.bin count=4 bs=1 seek=15136 of=$BASE/lib/libgsl.so conv=notrunc &>> binary_patch.log
+if [ "$?" = "0" ]; then
+    echo "success"
+else
+    echo "failed $?"
+fi
+
 echo "This is designed to extract files from an official stock build"
 ./setup-makefiles.sh

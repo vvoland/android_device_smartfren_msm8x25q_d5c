@@ -1,0 +1,25 @@
+From 234d5243b7d618c29232781d2d8841ade4931823 Mon Sep 17 00:00:00 2001
+From: Woland <thurhas@gmail.com>
+Date: Sun, 31 Jan 2016 20:30:36 +0100
+Subject: [PATCH] Remove card sim number from status bar
+
+---
+ .../src/com/android/systemui/statusbar/MSimSignalClusterView.java       | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/packages/SystemUI/src/com/android/systemui/statusbar/MSimSignalClusterView.java b/packages/SystemUI/src/com/android/systemui/statusbar/MSimSignalClusterView.java
+index c81a9e1..b733cad 100644
+--- a/packages/SystemUI/src/com/android/systemui/statusbar/MSimSignalClusterView.java
++++ b/packages/SystemUI/src/com/android/systemui/statusbar/MSimSignalClusterView.java
+@@ -233,7 +233,7 @@ public class MSimSignalClusterView
+ 
+         if ((mMobileVisible && mNoSimIconId[subscription] == 0) && !mIsAirplaneMode) {
+             mMobileGroup[subscription].setVisibility(View.VISIBLE);
+-            mMobileSlot[subscription].setText(mMobileSlotString[subscription]);
++            mMobileSlot[subscription].setText("");
+             mMobile[subscription].setImageResource(mMobileStrengthId[subscription]);
+             mMobileGroup[subscription].setContentDescription(mMobileTypeDescription + " "
+                 + mMobileDescription[subscription]);
+-- 
+2.5.0
+
