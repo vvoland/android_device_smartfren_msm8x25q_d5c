@@ -1,0 +1,25 @@
+From d6cde102e3a9724510f1706baa26f5e904f17e73 Mon Sep 17 00:00:00 2001
+From: Woland <thurhas@gmail.com>
+Date: Thu, 4 Feb 2016 23:24:40 +0100
+Subject: [PATCH] Dont build uncrypt, because its already present in
+ system/core
+
+---
+ Android.mk | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/Android.mk b/Android.mk
+index ddd2c7d..84095e1 100644
+--- a/Android.mk
++++ b/Android.mk
+@@ -473,7 +473,6 @@ include $(LOCAL_PATH)/minui/Android.mk \
+     $(LOCAL_PATH)/tests/Android.mk \
+     $(LOCAL_PATH)/tools/Android.mk \
+     $(LOCAL_PATH)/edify/Android.mk \
+-    $(LOCAL_PATH)/uncrypt/Android.mk \
+     $(LOCAL_PATH)/updater/Android.mk \
+     $(LOCAL_PATH)/applypatch/Android.mk
+ 
+-- 
+2.5.0
+
