@@ -1,0 +1,43 @@
+From fed799a901f62bfe738641b98a7ff2254cc92ff4 Mon Sep 17 00:00:00 2001
+From: Woland <thurhas@gmail.com>
+Date: Tue, 23 Feb 2016 16:22:55 +0100
+Subject: [PATCH] Fix WiFi tethering
+
+Change-Id: If51747762c7da50d9a4be5094cdd00d0214fa61f
+---
+ wifi/wifi.c | 19 +------------------
+ 1 file changed, 1 insertion(+), 18 deletions(-)
+
+diff --git a/wifi/wifi.c b/wifi/wifi.c
+index d94b4a9..b09d012 100644
+--- a/wifi/wifi.c
++++ b/wifi/wifi.c
+@@ -1153,24 +1153,7 @@ const char *wifi_get_fw_path(int fw_type)
+ 
+ int wifi_change_fw_path(const char *fwpath)
+ {
+-    int len;
+-    int fd;
+-    int ret = 0;
+-
+-    if (!fwpath)
+-        return ret;
+-    fd = TEMP_FAILURE_RETRY(open(WIFI_DRIVER_FW_PATH_PARAM, O_WRONLY));
+-    if (fd < 0) {
+-        ALOGE("Failed to open wlan fw path param (%s)", strerror(errno));
+-        return -1;
+-    }
+-    len = strlen(fwpath) + 1;
+-    if (TEMP_FAILURE_RETRY(write(fd, fwpath, len)) != len) {
+-        ALOGE("Failed to write wlan fw path param (%s)", strerror(errno));
+-        ret = -1;
+-    }
+-    close(fd);
+-    return ret;
++    return 0;
+ }
+ 
+ int wifi_set_mode(int mode) {
+-- 
+2.5.0
+
